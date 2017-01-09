@@ -1,0 +1,30 @@
+
+
+<div class="product-simple-area section-padding2">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-5">
+				<div class="single-product-image"> 
+					<div id="content-eleyas">
+                        <%if @admin_post.avatar.present? %>
+
+                        <div class="col-md-3 col-sm-6 col-xs-12 product food">
+                            <div class="document-wrapper">
+                                <div class="document-2">
+                                   <%=image_tag @admin_post.avatar.url(:large),class: "img-responsive" %>
+
+                                </div>
+                                <div class="details">
+                                    <p class="text-center">
+                                        <strong><%=@admin_post.title%></strong>
+                                        <br>
+                                        <%=@admin_post.description%>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <%end%>
+                    </div>
+
+                </div>
+            </div>	

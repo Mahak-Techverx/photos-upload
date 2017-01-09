@@ -1,0 +1,9 @@
+   
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: photo_upload_development
+  username: postgres
+  password: 
+  host: localhost
+

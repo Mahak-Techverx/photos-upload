@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<%= render :partial => 'home/header' %>
+
+<body id="top">
+
+
+
+
+<!--############# PRODUCTS STARTS ############# -->
+<div class="products" id="products">
+    <div class="container">
+        <div class="text-center section-title">Photos</div>
+        
+
+
+
+<div class="row grid-view" id="productslist">
+    <%@admin_posts.each do |post|%>
+    <a href = "<%=home_path(post.id)%>">
+        <div class="col-md-3 col-sm-6 col-xs-12 product food" data-cat="food">
+            <div class="document-wrapper">
+                <div class="document-2">
+                    <%=image_tag post.avatar.url(:medium),class: "img-responsive" %>
+                    
+                </div>
+                <div class="details">
+                    <p class="text-center">
+                        <strong><%=post.title%></strong>
+                        <br>
+                       <%=post.description%>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </a>
+    <%end%>
+
+   
+
+
+</div>
+
+
+
+
+    </div>
+</div>
+<!--############# PRODUCTS ENDS ############# -->
+
+
+<%= render :partial => 'home/footer' %>
+
+
+
+
+
+
+
+
+</body>
+</html>
