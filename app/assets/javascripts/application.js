@@ -9,8 +9,29 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require bootstrap-toggle-buttons
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//=bootsrtap.min
+//=raphael.min
+//=morris-data
 //= require_tree .
+
+        function handleClick(cb, user_id){
+        	ban = cb;
+        	if (ban.checked)
+        	{
+           status = true 
+        	}
+        	else 
+        	{
+        		status = false
+        	}
+ $.ajax({
+  type: 'GET',
+  data: {"status" : status,"user_id" : user_id},
+  url: '/admin/ban'
+})
+    alert(status)
+}

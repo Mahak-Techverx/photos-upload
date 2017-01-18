@@ -6,4 +6,24 @@ development:
   username: postgres
   password: 
   host: localhost
+   
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: photo_upload_development
+  username: postgres
+  password: 
+  host: localhost
+
+test: &test
+  adapter: postgresql
+  encoding: utf8
+  database: photo_upload_test
+  username: postgres
+  password: 
+  host: localhost
+
+
+cucumber:
+  <<: *test
 

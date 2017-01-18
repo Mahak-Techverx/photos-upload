@@ -17,6 +17,7 @@
 
 <div class="row grid-view" id="productslist">
     <%@admin_posts.each do |post|%>
+
     <a href = "<%=home_path(post.id)%>">
         <div class="col-md-3 col-sm-6 col-xs-12 product food" data-cat="food">
             <div class="document-wrapper">

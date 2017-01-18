@@ -4,11 +4,11 @@ class Admin::PostsController < AdminController
   # GET /admin/posts
   # GET /admin/posts.json
   def index
-
-    if current_user.present? and current_user.has_role? :user
+    if current_user.present? and current_user.has_role? :admin
+    @admin_posts = Admin::Post.all
+      
+    elsif current_user.present? and current_user.has_role? :user
       @admin_posts = Admin::Post.where(user_id: current_user.id)
-    elsif current_user.present? and current_user.has_role? :admin
-      @admin_posts = Admin::Post.all
     end
 
   end
@@ -75,9 +75,9 @@ class Admin::PostsController < AdminController
     def set_admin_post
       @admin_post = Admin::Post.find(params[:id])
     end
-
+     
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_post_params
-      params.require(:admin_post).permit(:title, :image, :description, :avatar, :user_id)
+      params.require(:admin_post).permit(:title, :image, :description, :avatar, :user_id, :created_at)
     end
   end

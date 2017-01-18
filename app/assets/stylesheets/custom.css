@@ -5,7 +5,7 @@ a, a:hover, img, img:hover, button, button:hover, i, i:hover { transition: all 0
 a:hover, a:active, a:visited, a:focus { text-decoration:none; }
 img { border:0; }
 
-h1 { font-size:26px; }h2 { font-size:24px; }h3 { font-size:22px; }
+h1 { font-size:26px; color:#fff;}h2 { font-size:24px; }h3 { font-size:22px; }
 h4 { font-size:20px; }h5 { font-size:18px; }h6 { font-size:16px; }
 
 .clear, .clear1, .clear2, .clear3, .clear4, .clear5, .clear10, .clear20, .clear30, .clear40, .clear80 
@@ -15,6 +15,7 @@ h4 { font-size:20px; }h5 { font-size:18px; }h6 { font-size:16px; }
 .no-padding-margin { padding:0; margin:0; }
 .no-padding { padding:0; }
 .no-margin { margin:0; }
+
 
 .relative { position: relative; }
 .overflowhidden { overflow: hidden; }
@@ -137,7 +138,7 @@ background: linear-gradient(#2c8cb3, #2caab3);
 
 .flexslider .slides img { width: auto; }
 .flex-direction-nav a { height: 45px; top: 40%; }
-
+q1	
 
 /*filter products*/
 #productslist .product {
@@ -149,3 +150,7 @@ overflow:hidden;
 }
 .filter { cursor: pointer; }
 /*filter products*/
+
+p.alert {
+    color: #fff !important;
+}

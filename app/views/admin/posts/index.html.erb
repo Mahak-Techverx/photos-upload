@@ -50,10 +50,10 @@
 
                 <td><%= image_tag category.image.avatar.url(:thumbnail) rescue '' %>
                 
-                    <span><%= link_to '', edit_admin_post_path(post),class: "edit fa fa-edit icon_link with-tip no-text", title: "edit" %> </span>
+                    <span><%= link_to 'Edit', edit_admin_post_path(post), title: "edit" %> </span>
                     <span>
-                        
-                        <%= link_to '', admin_post_path(post),  method: :delete, data: { confirm: 'Are you sure?' } ,class: "fa fa-trash icon_link with-tip no-text"%>
+                         
+                        <%= link_to 'Delete', admin_post_path(post),  method: :delete, data: { confirm: 'Are you sure?' } %>
                     </span>
                 </td>
             </tr>
