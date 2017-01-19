@@ -27,16 +27,10 @@
                             <thead>
                                 <tr>
                                     <th style="display:none;"></th>
-
-
-                                 
                                     <th><%= t 'admin.email'%></th>
                                     <th><%= t 'admin.ban'%></th>
                                     
                                     
-
-
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,13 +39,10 @@
 
                                 <tr class="odd gradeX">
                                     <td style="display: none;"></td>
-
-                                   
                                     <td><%= user.email %></td> 
-                                   
-                                  
+                                     <td><input type="checkbox" <%= user.ban? ? 'checked' : 'uncheked'%> data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-on="Un Ban" data-off="Ban" onChange='handleClick(this,<%= user.id%>);'><%user.ban%> </td>
 
-                                     <td><input type="checkbox" data-toggle="toggle"<%= user.ban? ? 'checked' : 'uncheked'%>  data-on="Un Ban" data-off="Ban" onChange='handleClick(this,<%= user.id%>);'><%user.ban%></td>
+                                  
                                    
 
 
@@ -81,6 +72,11 @@
 </div>
 </div>
 <script>
-
+  $(function() {
+    $('#toggle-two').bootstrapToggle({
+      on: 'Enabled',
+      off: 'Disabled'
+    });
+  })
 </script>
 <!-- /.row -->

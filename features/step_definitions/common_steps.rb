@@ -15,30 +15,29 @@ end
 
 
 When("I click the $text button") do |text|
-  
-    find_button(text, :exact => true).click
-end
+ find_button(text, :exact => true).click
 
-When("I press $text1 button within $class1") do |text1,class1|
-        within(class1) do
-        	find_button(text1, :exact => true).click
-    	end
 end
 
 
 When("I press $text1 button") do |text1|
-    within(".intl-houses-table") do
-      	find_button(text1, :exact => true).click
+    within(".new_admin_post") do
+        page.find_button(text1).click
+    end
+end
+When("user clicks $text2 button") do |text2|
+    within(".edit_admin_post") do
+        page.find_button(text2).click
     end
 end
 
+Then(/^I see an alert "(.+?)"$/) do |content|
+  page.driver.browser.switch_to.alert.text.should == content
+ page.driver.browser.switch_to.alert.accept do
+  browser.confirm(true) {browser.button.click}
+ end
 
-Then ("I should see a popup with the $text") do|text|
- page.check(text)
 end
- 
-
-
 
 When("I click the $text link") do |text|
     click_link(text, match: :first)
