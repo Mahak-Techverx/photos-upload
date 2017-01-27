@@ -5,8 +5,12 @@ class HomeController < ApplicationController
 	end
 
 	def show
+	
 		@admin_posts = Admin::Post.all
-		@admin_post = Admin::Post.find(params :id , :order  => "created_at DESC")
+		@admin_post = Admin::Post.find params[:id]
+		count=@admin_post.clicks+1
+		@admin_post.update(:clicks=> count)
+		
 
 	end
 

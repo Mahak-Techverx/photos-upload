@@ -31,6 +31,7 @@
                 
                 <th><%= t 'admin.description'%></th>
                 <th><%= t 'admin.avatar'%></th>
+                <th><%= t 'admin.clicks'%></th>
 
                  <th><%= t "Action"%></th>
                 
@@ -47,6 +48,8 @@
         
                 <td><%= post.description %></td> 
                 <td><%= image_tag post.avatar.url(:thumb) %></td>
+                 <td><%= post.clicks %></td> 
+
 
                 <td><%= image_tag category.image.avatar.url(:thumbnail) rescue '' %>
                 
